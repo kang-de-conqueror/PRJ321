@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>IndexController</servlet-name>
+        <servlet-class>khangtl.controllers.IndexController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RepairController</servlet-name>
+        <servlet-class>khangtl.controllers.RepairController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmRepairController</servlet-name>
+        <servlet-class>khangtl.controllers.ConfirmRepairController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexController</servlet-name>
+        <url-pattern>/IndexController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RepairController</servlet-name>
+        <url-pattern>/RepairController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmRepairController</servlet-name>
+        <url-pattern>/ConfirmRepairController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>IndexController</welcome-file>
+    </welcome-file-list>
+</web-app>

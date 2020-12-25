@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.mapper.action.prefix.enabled" value="true" />
+    <package name="default" extends="struts-default">
+        <action name="InsertAction" class="khangtl.actions.InsertAction" method="execute">
+            <result name="success">MainMenu.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="reset">InsertBlog.jsp</result>
+            <result name="input">InsertBlog.jsp</result>
+        </action>
+        <action name="DeleteAction" class="khangtl.actions.DeleteAction">
+            <result name="success">MainMenu.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">DeleteBlog.jsp</result>
+        </action>
+    </package>
+</struts>

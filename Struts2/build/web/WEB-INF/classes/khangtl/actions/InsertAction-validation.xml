@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+                "-//Apache Struts//XWork Validator 1.0.3//EN"
+                "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+
+<validators>
+    <field name="username">
+        <field-validator type="requiredstring">
+            <message>Username can't be blank</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <param name="maxLength">20</param>
+            <message>Username length must be 6 to 20 chars</message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message>Password can't be blank</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <param name="maxLength">20</param>
+            <message>Password length must be 6 to 20 chars</message>
+        </field-validator>
+    </field>
+    <field name="confirm">
+        <field-validator type="expression">
+            <param name="expression">confirm==password</param>
+            <message>Confirm must match password</message>
+        </field-validator>
+    </field>
+    <field name="emailID">
+        <field-validator type="email">
+            <message>Your email is invalid</message>
+        </field-validator>
+    </field>
+    <field name="phoneNumber">
+        <field-validator type="regex">
+            <param name="regex">\d{3}-\d{7}</param>
+            <message>Your phone number is invalid</message>
+        </field-validator>
+    </field>
+</validators>

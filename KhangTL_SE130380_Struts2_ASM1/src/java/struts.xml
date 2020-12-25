@@ -1,0 +1,27 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="LoginAction" class="khangtl.actions.LoginAction">
+            <result name="success" type="redirectAction">LoadAction</result>
+            <result name="error">error.jsp</result>
+            <result name="input">Login.jsp</result>
+        </action>
+        <action name="LoadAction" class="khangtl.actions.LoadAction">
+            <result name="success">ViewAll.jsp</result>
+        </action>
+        <action name="UpdateAction" class="khangtl.actions.UpdateAction">
+            <result name="success">Update.jsp</result>
+        </action>
+        <action name="ConfirmUpdateAction" class="khangtl.actions.ConfirmUpdateAction">
+            <result name="success" type="redirectAction">
+                LoadAction
+            </result>
+            <result name="input">Update.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+    </package>
+</struts>

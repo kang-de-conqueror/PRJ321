@@ -1,0 +1,31 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="LoginAction" class="khangtl.actions.LoginAction">
+            <result name="admin">admin.jsp</result>
+            <result name="user">user.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">index.jsp</result>
+        </action>
+        <action name="SearchAction" class="khangtl.actions.SearchAction">
+            <result name="success">admin.jsp</result>
+        </action>
+        <action name="DeleteAction" class="khangtl.actions.DeleteAction">
+            <result name="error">error.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">SearchAction</param>
+                <param name="searchValue">${lastSearchValue}</param>
+            </result>
+        </action>
+        <action name="InsertAction" class="khangtl.actions.InsertAction">
+            <exception-mapping exception="java.sql.SQLException" result="input" />
+            <result name="success">index.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="input">insert.jsp</result>
+        </action>
+    </package>
+</struts>
